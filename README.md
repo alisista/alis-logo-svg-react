@@ -2,6 +2,9 @@
 
 [![npm package](https://nodei.co/npm/alis-logo-svg-react.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/alis-logo-svg-react/)
 
+![example logo](https://raw.githubusercontent.com/alisista/alis-logo-svg-react/master/assets/example_logo.png "Example Logo")
+
+---
 
 
 ## Table of contents
