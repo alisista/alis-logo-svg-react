@@ -1,0 +1,25 @@
+{
+  "name": "alis-logo-svg-react",
+  "version": "0.1.0",
+  "description": "A customizable svg ALIS logo as a React Component",
+  "main": "./lib/ALIS_LOGO.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "ocrybit",
+    "email": "ocrybit@gmail.com",
+    "url": "https://alis.ocrybit.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alisista/alis-logo-svg-react.git"
+  },
+  "keywords": [
+    "ALIS"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.4.2"
+  }
+}
