@@ -1,1 +1,241 @@
-module.exports=function(e){var t={};function r(o){if(t[o])return t[o].exports;var n=t[o]={i:o,l:!1,exports:{}};return e[o].call(n.exports,n,n.exports,r),n.l=!0,n.exports}return r.m=e,r.c=t,r.d=function(e,t,o){r.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:o})},r.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},r.t=function(e,t){if(1&t&&(e=r(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var o=Object.create(null);if(r.r(o),Object.defineProperty(o,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var n in e)r.d(o,n,function(t){return e[t]}.bind(null,n));return o},r.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return r.d(t,"a",t),t},r.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},r.p="",r(r.s=0)}([function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var o=function(){function e(e,t){for(var r=0;r<t.length;r++){var o=t[r];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,r,o){return r&&e(t.prototype,r),o&&e(t,o),t}}(),n=r(1),i=function(e){return e&&e.__esModule?e:{default:e}}(n);var u=function(e){function t(e){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t);var r=function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e));return r.tiles=[[1,2,3],[3,4,1],[4,3,5],[6,5,4],[5,6,7],[7,8,5],[5,9,8],[5,9,10],[10,9,12],[11,12,10]],r}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,n.Component),o(t,[{key:"download",value:function(e){}},{key:"getCircleColor",value:function(e){var t=this.props.circle_color;return void 0==t&&(t=e[Math.floor(Math.random()*e.length)]),t}},{key:"getTiles",value:function(e,t){var r=this.getPoints(e),o=[0,1,2,3,4,5,2,3,0,1].map(function(e){return e%t.length}),n=[];return this.tiles.forEach(function(e,u){var s=t[o[u]];n.push(i.default.createElement("path",{key:"tile-"+u,fill:s,stroke:s,d:"M "+r[e[0]-1].join(" ")+" L "+r[e[1]-1].join(" ")+" L "+r[e[2]-1].join(" ")+" L "+r[e[0]-1].join(" ")}))}),n}},{key:"getColors",value:function(){for(var e=[],t=[],r=this.props.colors.length,o=0;o<r;o+=1)t.push(o);for(var n=0;n<r;n+=1){var i=0;!0===this.props.shuffle&&(i=Math.floor(Math.random()*t.length)),e.push(this.props.colors[t[i]]),t.splice(i,1)}return void 0!==this.props.number_of_colors&&this.props.number_of_colors>0&&(e=e.slice(0,this.props.number_of_colors,1)),e}},{key:"getPoints",value:function(e){var t=[[0,300],[77,300],[120,182],[61,135],[150,100],[92,50],[110,0],[186,0],[237,135],[177,182],[220,300],[300,300]],r=this.props.size,o=0;return!0===this.props.nomargin&&(r=this.props.size/.82*.95,o=.13*this.props.size),t.forEach(function(e,n){var i=0,u=!0,s=!1,l=void 0;try{for(var a,c=e[Symbol.iterator]();!(u=(a=c.next()).done);u=!0){var p=a.value;p-=o;var f=.25;1===i&&(f=.221),t[n][i]=r/300*p*.5+r*f,i+=1}}catch(e){s=!0,l=e}finally{try{!u&&c.return&&c.return()}finally{if(s)throw l}}n+=1}),t}},{key:"getCircle",value:function(e,t){var r=this.getCircleColor(t);return i.default.createElement("circle",{key:"circle",cx:this.props.size/2,cy:this.props.size/2,r:this.props.size/2*e,fill:"none",stroke:r,strokeWidth:this.props.size/25})}},{key:"getBackground",value:function(){var e=null;return!1!==this.props.backgroundColor&&(e=i.default.createElement("rect",{key:"background",x:"0",y:"0",width:this.props.size,height:this.props.size,fill:this.props.backgroundColor})),e}},{key:"render",value:function(){var e=.82;!0===this.props.nomargin&&(e=.95);var t=this.getColors(),r=this.getBackground(),o=this.getTiles(e,t),n=this.getCircle(e,t);return i.default.createElement("svg",{id:this.props.id,style:{height:this.props.size+"px",width:this.props.size+"px"}},r,o,n)}}]),t}();t.default=u},function(e,t){e.exports=require("react")}]);
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ALIS_LOGO = function (_Component) {
+  _inherits(ALIS_LOGO, _Component);
+
+  function ALIS_LOGO(props) {
+    _classCallCheck(this, ALIS_LOGO);
+
+    var _this = _possibleConstructorReturn(this, (ALIS_LOGO.__proto__ || Object.getPrototypeOf(ALIS_LOGO)).call(this, props));
+
+    _this.tiles = [[1, 2, 3], [3, 4, 1], [4, 3, 5], [6, 5, 4], [5, 6, 7], [7, 8, 5], [5, 9, 8], [5, 9, 10], [10, 9, 12], [11, 12, 10]];
+
+    var circle_color = _this.props.circle_color;
+    if (_this.props.colors == undefined && _this.circle_color == undefined) {
+      circle_color = "#5E68AF";
+    }
+    var colors = _this.props.colors || ["#454A75", "#51578A", "#5C629C", "#686FB0", "#7880CC", "#848DE0"];
+
+    _this.state = {
+      id: _this.props.id || "alis_logo",
+      colors: colors,
+      circle_color: circle_color,
+      size: _this.props.size || 300,
+      number_of_colors: _this.props.number_of_colors || _this.colors,
+      backgroundColor: _this.props.backgroundColor || false,
+      shuffle: _this.props.shuffle || false,
+      nomargin: _this.props.nomargin || false
+    };
+    return _this;
+  }
+
+  _createClass(ALIS_LOGO, [{
+    key: "download",
+    value: function download(file_name) {
+      var _this2 = this;
+
+      var canvas = document.getElementById("c");
+      canvas.width = this.state.size;
+      canvas.height = this.state.size;
+
+      var svg = document.getElementById(this.props.id);
+      var div = document.getElementById("d");
+      div.innerHTML = svg.outerHTML;
+      svg = div.querySelector("svg");
+
+      var data = new XMLSerializer().serializeToString(svg);
+      var win = window.URL || window.webkitURL || window;
+      var img = new Image();
+      var blob = new Blob([data], { type: "image/svg+xml" });
+      var url = win.createObjectURL(blob);
+
+      img.onload = function () {
+        canvas.getContext("2d").drawImage(img, 0, 0);
+        win.revokeObjectURL(url);
+        var uri = canvas.toDataURL("image/png").replace("image/png", "octet/stream");
+        var a = document.createElement("a");
+        document.body.appendChild(a);
+        a.style = "display: none";
+        a.href = uri;
+        a.download = file_name || "alis_logo_" + _this2.state.size + "px.png";
+        a.click();
+        window.URL.revokeObjectURL(uri);
+        document.body.removeChild(a);
+      };
+      img.src = url;
+    }
+  }, {
+    key: "getCircleColor",
+    value: function getCircleColor(colors) {
+      var circle_color = this.state.circle_color;
+      if (circle_color == undefined) {
+        circle_color = colors[Math.floor(Math.random() * colors.length)];
+      }
+
+      return circle_color;
+    }
+  }, {
+    key: "getTiles",
+    value: function getTiles(ratio, colors) {
+      // calculate actual points
+      var points = this.getPoints(ratio);
+
+      // get tile colors
+      var tile_colors = [0, 1, 2, 3, 4, 5, 2, 3, 0, 1].map(function (v) {
+        return v % colors.length;
+      });
+
+      var tiles = [];
+      this.tiles.forEach(function (v, i) {
+        var color = colors[tile_colors[i]];
+        tiles.push(_react2.default.createElement("path", {
+          key: "tile-" + i,
+          fill: color,
+          stroke: color,
+          d: "M " + points[v[0] - 1].join(" ") + " L " + points[v[1] - 1].join(" ") + " L " + points[v[2] - 1].join(" ") + " L " + points[v[0] - 1].join(" ")
+        }));
+      });
+
+      return tiles;
+    }
+  }, {
+    key: "getColors",
+    value: function getColors() {
+      var colors = [];
+      var nums = [];
+      var len = this.state.colors.length;
+      for (var i = 0; i < len; i += 1) {
+        nums.push(i);
+      }
+      for (var _i = 0; _i < len; _i += 1) {
+        var n = 0;
+        if (this.props.shuffle === true) {
+          n = Math.floor(Math.random() * nums.length);
+        }
+        colors.push(this.state.colors[nums[n]]);
+        nums.splice(n, 1);
+      }
+      if (this.state.number_of_colors !== undefined && this.state.number_of_colors > 0) {
+        colors = colors.slice(0, this.state.number_of_colors, 1);
+      }
+
+      return colors;
+    }
+  }, {
+    key: "getPoints",
+    value: function getPoints(ratio) {
+      var points = [[0, 300], [77, 300], [120, 182], [61, 135], [150, 100], [92, 50], [110, 0], [186, 0], [237, 135], [177, 182], [220, 300], [300, 300]];
+
+      var size_adjusted = this.state.size;
+      var minus = 0;
+      if (this.props.nomargin === true) {
+        size_adjusted = this.state.size / 0.82 * 0.95;
+        minus = this.state.size * (0.95 - 0.82);
+      }
+
+      points.forEach(function (p, i) {
+        var i2 = 0;
+        var _iteratorNormalCompletion = true;
+        var _didIteratorError = false;
+        var _iteratorError = undefined;
+
+        try {
+          for (var _iterator = p[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            var p2 = _step.value;
+
+            p2 -= minus;
+            var mult = 0.25;
+            if (i2 === 1) {
+              mult = 0.221;
+            }
+            points[i][i2] = size_adjusted / 300 * p2 * 0.5 + size_adjusted * mult;
+            i2 += 1;
+          }
+        } catch (err) {
+          _didIteratorError = true;
+          _iteratorError = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion && _iterator.return) {
+              _iterator.return();
+            }
+          } finally {
+            if (_didIteratorError) {
+              throw _iteratorError;
+            }
+          }
+        }
+
+        i += 1;
+      });
+
+      return points;
+    }
+  }, {
+    key: "getCircle",
+    value: function getCircle(ratio, colors) {
+      // get circle color
+      var circle_color = this.getCircleColor(colors);
+
+      return _react2.default.createElement("circle", { key: "circle", cx: this.state.size / 2, cy: this.state.size / 2, r: this.state.size / 2 * ratio, fill: "none", stroke: circle_color, strokeWidth: this.state.size / 25 });
+    }
+  }, {
+    key: "getBackground",
+    value: function getBackground() {
+      var background = null;
+      if (this.state.backgroundColor !== false) {
+        background = _react2.default.createElement("rect", { key: "background", x: "0", y: "0", width: this.state.size, height: this.state.size, fill: this.state.backgroundColor });
+      }
+
+      return background;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var ratio = 0.82;
+      if (this.props.nomargin === true) {
+        ratio = 0.95;
+      }
+      // get colors
+      var colors = this.getColors();
+
+      // get background
+      var background = this.getBackground();
+
+      // generate tiles
+      var tiles = this.getTiles(ratio, colors);
+
+      var circle = this.getCircle(ratio, colors);
+
+      return _react2.default.createElement(
+        "svg",
+        { id: this.props.id, style: { height: this.state.size + "px", width: this.state.size + "px" } },
+        background,
+        tiles,
+        circle
+      );
+    }
+  }]);
+
+  return ALIS_LOGO;
+}(_react.Component);
+
+exports.default = ALIS_LOGO;
