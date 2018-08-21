@@ -1,3 +1,6 @@
+# App
+dist
+
 # Logs
 logs
 *.log
@@ -71,3 +74,4 @@ typings/
 
 # Serverless directories
 .serverless
+
