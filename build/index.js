@@ -49,7 +49,8 @@ var ALIS_LOGO = function (_Component) {
 
       canvas.width = size;
       canvas.height = size;
-      if (this.props.type == 'logo+letters') {
+
+      if (['logo+letters', 'letters'].includes(this.props.type)) {
         canvas.height = size / 3;
       } else if (this.props.type == 'logo+letters+slogan') {
         canvas.height = size / 2;
@@ -70,7 +71,7 @@ var ALIS_LOGO = function (_Component) {
 
       img.onload = function () {
         canvas.getContext('2d').drawImage(img, 0, 0);
-        win.revokeObjectURLog(url);
+        win.revokeObjectURL(url);
         var uri = canvas.toDataURL('image/png').replace('image/png', 'octet/stream');
         var a = document.createElement('a');
         document.body.appendChild(a);

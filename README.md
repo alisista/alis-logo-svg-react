@@ -2,8 +2,6 @@
 
 [![npm package](https://nodei.co/npm/alis-logo-svg-react.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/alis-logo-svg-react/)
 
-![example logo](https://raw.githubusercontent.com/alisista/alis-logo-svg-react/master/assets/example_logo.png "Example Logo")
-
 ---
 
 
@@ -12,6 +10,7 @@
 - [Installation](#installation)
 - [Demo](#demo)
 - [Example](#example)
+- [Logo Types](#logo-types)
 - [Contributors](#contributors)
 
 
@@ -62,8 +61,8 @@ class App extends Component {
 	    shuffle={true}
 	    nomargin={true}
 	    size={531}
-		type={`logo+letters+slogan`}
-		text={`信頼できる記事と人々を明かにする\n全く新しいソーシャルメディア`}
+        type={`logo+letters+slogan`}
+        text={`信頼できる記事と人々を明かにする\n全く新しいソーシャルメディア`}
 	    />
     )
   }
@@ -71,6 +70,24 @@ class App extends Component {
 
 render(<App />, document.getElementById("root"))
 ```
+
+---
+
+## Logo Types
+
+`type={\`logo\`}`
+![example logo](https://raw.githubusercontent.com/alisista/alis-logo-svg-react/master/assets/example_logo.png "logo")
+
+`type={\`letters\`}`
+![example logo](https://raw.githubusercontent.com/alisista/alis-logo-svg-react/master/assets/example_letters.png "letters)
+
+`type={\`logo+letters\`}`
+![example logo](https://raw.githubusercontent.com/alisista/alis-logo-svg-react/master/assets/example_logo+letters.png "logo+letters)
+
+`type={\`logo+letters+slogan\`}`
+![example logo](https://raw.githubusercontent.com/alisista/alis-logo-svg-react/master/assets/example_logo+letters+slogan.png "logo+letters+slogan)
+
+
 
 ---
 

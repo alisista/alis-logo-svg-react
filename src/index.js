@@ -34,7 +34,8 @@ class ALIS_LOGO extends Component{
 
     canvas.width = size
     canvas.height = size
-    if(this.props.type == `logo+letters`){
+    
+    if([`logo+letters`, `letters`].includes(this.props.type)){
       canvas.height = size / 3
     }else if(this.props.type == `logo+letters+slogan`){
       canvas.height = size / 2
@@ -55,7 +56,7 @@ class ALIS_LOGO extends Component{
     
     img.onload =  ()=> {
       canvas.getContext(`2d`).drawImage(img, 0, 0)
-      win.revokeObjectURLog(url)
+      win.revokeObjectURL(url)
       const uri = canvas.toDataURL(`image/png`).replace(`image/png`, `octet/stream`)
       let a = document.createElement(`a`)
       document.body.appendChild(a)
