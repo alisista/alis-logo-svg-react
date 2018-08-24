@@ -63,7 +63,7 @@ class App extends Component {
         size={531}
         type={`logo+letters+slogan`}
         text={`信頼できる記事と人々を明かにする\n全く新しいソーシャルメディア`}
-	    />
+        />
     )
   }
 }
