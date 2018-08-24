@@ -75,16 +75,16 @@ render(<App />, document.getElementById("root"))
 
 ## Logo Types
 
-`type={\`logo\`}`
+`type={``logo``}`
 ![example logo](https://raw.githubusercontent.com/alisista/alis-logo-svg-react/master/assets/example_logo.png "logo")
 
-`type={\`letters\`}`
+`type={``letters``}`
 ![example logo](https://raw.githubusercontent.com/alisista/alis-logo-svg-react/master/assets/example_letters.png "letters)
 
-`type={\`logo+letters\`}`
+`type={``logo+letters``}`
 ![example logo](https://raw.githubusercontent.com/alisista/alis-logo-svg-react/master/assets/example_logo+letters.png "logo+letters)
 
-`type={\`logo+letters+slogan\`}`
+`type={``logo+letters+slogan``}`
 ![example logo](https://raw.githubusercontent.com/alisista/alis-logo-svg-react/master/assets/example_logo+letters+slogan.png "logo+letters+slogan)
 
 
