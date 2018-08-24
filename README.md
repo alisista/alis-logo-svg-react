@@ -61,7 +61,9 @@ class App extends Component {
 	    backgroundColor={false}
 	    shuffle={true}
 	    nomargin={true}
-	    size={300}
+	    size={531}
+		type={`logo+letters+slogan`}
+		text={`信頼できる記事と人々を明かにする\n全く新しいソーシャルメディア`}
 	    />
     )
   }

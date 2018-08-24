@@ -23,8 +23,10 @@ class App extends Component {
 	circle_color="#5E68AF"
 	backgroundColor={false}
 	shuffle={true}
-	nomargin={true}
-	size={300}
+	nomargin={false}
+	size={531}
+	type={`logo+letters+slogan`}
+	text={`信頼できる記事と人々を明かにする\n全く新しいソーシャルメディア`}
 	/>
     )
   }
