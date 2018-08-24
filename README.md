@@ -52,15 +52,15 @@ class App extends Component {
     const colors = [`#454A75`, `#51578A`, `#5C629C`, `#686FB0`, `#7880CC`, `#848DE0`]
     return (
       <ALIS_LOGO
-	    ref={this.ref}
-	    id="alis_logo"
-	    colors={colors}
-	    number_of_colors={6}
-	    circle_color="#5E68AF"
-	    backgroundColor={false}
-	    shuffle={true}
-	    nomargin={true}
-	    size={531}
+        ref={this.ref}
+        id="alis_logo"
+        colors={colors}
+        number_of_colors={6}
+        circle_color="#5E68AF"
+        backgroundColor={false}
+        shuffle={true}
+        nomargin={true}
+        size={531}
         type={`logo+letters+slogan`}
         text={`信頼できる記事と人々を明かにする\n全く新しいソーシャルメディア`}
 	    />
