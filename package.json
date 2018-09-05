@@ -1,6 +1,6 @@
 {
   "name": "alis-logo-svg-react",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A customizable svg ALIS logo as a React Component",
   "main": "build/index.js",
   "scripts": {

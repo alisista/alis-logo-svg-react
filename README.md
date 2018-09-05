@@ -30,7 +30,7 @@ yarn add alis-logo-svg-react
 
 ---
 
-## example
+## Example
 
 ```js
 import React, { Component } from 'react'
